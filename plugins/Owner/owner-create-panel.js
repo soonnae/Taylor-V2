@@ -6,7 +6,7 @@ const format = sizeFormatter(),
     m,
     { conn, args, text, usedPrefix: _p, command, isROwner },
   ) => {
-    const domain = "http://43.133.156.76",
+    const domain = "https://43.133.156.76", // Changed from http to https
       apikey = "ptla_gyH0Dtbew65OealnuYGURRs77z0Y5Yz5I4WYxISMO1a",
       c_apikey = "ptlc_pDEHGmUXUHxY1FKoh5pVd62a9nAK3VTcZk9fBCopD3y";
     switch (command) {
@@ -58,7 +58,7 @@ const format = sizeFormatter(),
             },
           );
           await conn.sendMessage(u, {
-            text: `*===[ Pesanan Panel ]===*\n\nId: ${user.id}                \nUsername: ${user.username}\nPassword: hehe${password}\nLogin: http://43.133.156.76\nAktif : 1 Bulan\n`,
+            text: `*===[ Pesanan Panel ]===*\n\nId: ${user.id}                \nUsername: ${user.username}\nPassword: hehe${password}\nLogin: https://43.133.156.76\nAktif : 1 Bulan\n`, // Changed from http to https
           }),
             conn.sendMessage(dms, {
               text: `*===[ Pesanan Panel ]===*\n\nAkun Punya : @${u.split("@")[0]} \nId: ${user.id}\n\nEmail: ${user.email}\nUsername: ${user.username}\nPassword: ${password}\nDibuat: ${user.created_at}\n`,

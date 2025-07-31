@@ -50,7 +50,7 @@ async function getgptzw7Response(content) {
   };
   try {
     return (
-      await axios.post("http://5awm.gpt.zw7.lol/chat.php", data, {
+      await axios.post("https://5awm.gpt.zw7.lol/chat.php", data, {
         headers: {
           "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
           Accept: "application/json, text/javascript, */*; q=0.01",
