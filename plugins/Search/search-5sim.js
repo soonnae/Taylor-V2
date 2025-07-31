@@ -1,7 +1,6 @@
 import fetch from "node-fetch";
-const token =
-    "eyJhbGciOiJSUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MDg0MjUwNTIsImlhdCI6MTY3Njg4OTA1MiwicmF5IjoiNzRmYjkyNDJiZDI0MGJjNGViYzk1ODQ5NTQxNzU4ZGMiLCJzdWIiOjE0NTc0NTJ9.xCeLJwMW0U5TDNgQOp-RSwprRxZXTv-2GBIUDnMb5T8LjyAL_quVH_86VdHdHLmPuzi0vTjNQUTBEYM4naOW13pkhgb5pzLcjkCvPaC65S8frr8UqQ38IuQsfObc2FSKCkikks0li6fvFDxnsXfhhAOHjd1fftzHAP8AZkOW4PNZx4jNTDCescaYwt-1aM2MKEecXV_7vyrdqoHO7SYnpIFpLurPS0LlYsLbYm9ceT-hf8YVQitvPjQSkjcjudgKIm6QSHzEazPLDld0SQAWHmTVba06TIJYwjK0B_8mfnRONrnkrcpyx9Vt1r6nbfclnRYzFQfd3UQ02Cl7Eyhxeg",
-  fetchAPI = async (url) => {
+const token = process.env.API_TOKEN;
+const fetchAPI = async (url) => {
     try {
       const response = await fetch(url, {
         headers: {

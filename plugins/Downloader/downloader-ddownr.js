@@ -65,7 +65,7 @@ async function Ddownr(videoUrl, format = "360") {
   try {
     const apiUrl = "https://ab.cococococ.com/ajax/download.php";
     const progressUrl = "https://p.oceansaver.in/ajax/progress.php";
-    const apiKey = "dfcb6d76f2f6a9894gjkege8a4ab232222";
+    const apiKey = process.env.DDOWNR_API_KEY;
     const timeout = 6e4,
       interval = 2e3;
     const res = await fetch(

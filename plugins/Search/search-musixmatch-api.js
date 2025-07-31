@@ -1,5 +1,5 @@
 import fetch from "node-fetch";
-const API_KEY = "46a908cae9e6fe663a1fe8ef339f08f6";
+const API_KEY = process.env.MUSIXMATCH_API_KEY;
 const handler = async (m, { conn, args, usedPrefix, text, command }) => {
   const lister = ["search", "top", "lyrics", "track"];
   const [feature, inputs] = text.split("|");

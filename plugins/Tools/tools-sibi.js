@@ -31,9 +31,10 @@ async function combineVideosToBuffer(videoData) {
   const outputFilePath = path.join(tempDir, "output.mp4");
   try {
     for (const { url } of videoData) {
+      const sanitizedFileName = path.basename(url).replace(/[^a-zA-Z0-9.\-_]/g, "_");
       const tempFilePath = path.join(
         tempDir,
-        `${Date.now()}_${path.basename(url)}`,
+        `${Date.now()}_${sanitizedFileName}`,
       );
       await downloadVideo(url, tempFilePath);
       tempFiles.push(tempFilePath);

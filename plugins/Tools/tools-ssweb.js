@@ -4,12 +4,12 @@ const services = [
   {
     name: "YasirWeb",
     key: "v1",
-    apiKey: "",
+    apiKey: process.env.YASIRWEB_API_KEY || "",
   },
   {
     name: "ApiFlash",
     key: "v2",
-    apiKey: "7eea5c14db5041ecb528f68062a7ab5d",
+    apiKey: process.env.APIFLASH_API_KEY || "",
   },
   {
     name: "Thum.io",
@@ -59,7 +59,7 @@ const services = [
   {
     name: "ScreenshotLayer",
     key: "v12",
-    apiKey: "de547abee3abb9d3df2fc763637cac8a",
+    apiKey: process.env.SCREENSHOTLAYER_API_KEY || "",
   },
   {
     name: "Microlink",
@@ -69,7 +69,7 @@ const services = [
   {
     name: "Urlbox",
     key: "v14",
-    apiKey: "ln9ptArKXobLRpDQ",
+    apiKey: process.env.URLBOX_API_KEY || "",
   },
   {
     name: "Terasp.net",

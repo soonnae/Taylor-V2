@@ -181,7 +181,7 @@ export default handler;
 function ArrClean(str) {
   return str.map((v, index) => ++index + ". " + v).join("\r\n");
 }
-var apiKey = "aac9268580d78ff419b26625d1150db3",
+var apiKey = process.env.LASTFM_API_KEY,
   apiUrl = "https://ws.audioscrobbler.com/2.0/";
 
 function userRecentTracks(username) {

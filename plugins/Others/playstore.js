@@ -10,7 +10,7 @@ const handler = async (m, { command, usedPrefix, conn, text, args }) => {
   try {
     const param = {
       api_key:
-        "f70cce2ec221209bcd45af4533adbbc51c51b682c29251b618061115c6e95d5c",
+        process.env.SERP_API_KEY,
       engine: "google_play",
       q: tema,
     };

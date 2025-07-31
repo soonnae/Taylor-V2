@@ -11,8 +11,7 @@ const handler = async (m, { command, usedPrefix, conn, args }) => {
     m.react(wait);
     if (command === "yahoo") {
       const param = {
-        api_key:
-          "d52da17da557f02e45234c11db22c4e9fe19c15d68a378e0a31f11d92b2cf562",
+        api_key: process.env.SERPAPI_KEY,
         engine: "yahoo",
         p: text,
       };
@@ -27,8 +26,7 @@ const handler = async (m, { command, usedPrefix, conn, args }) => {
     }
     if (command === "yahooimg") {
       const param = {
-        api_key:
-          "d52da17da557f02e45234c11db22c4e9fe19c15d68a378e0a31f11d92b2cf562",
+        api_key: process.env.SERPAPI_KEY,
         engine: "yahoo_images",
         p: text,
       };
@@ -50,8 +48,7 @@ const handler = async (m, { command, usedPrefix, conn, args }) => {
     }
     if (command === "yahoovid") {
       const param = {
-        api_key:
-          "d52da17da557f02e45234c11db22c4e9fe19c15d68a378e0a31f11d92b2cf562",
+        api_key: process.env.SERPAPI_KEY,
         engine: "yahoo_videos",
         p: text,
       };

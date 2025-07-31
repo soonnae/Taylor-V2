@@ -3,8 +3,8 @@ const handler = async (m, { conn, usedPrefix, command }) => {
   try {
     let acr = new acrcloud({
         host: "identify-eu-west-1.acrcloud.com",
-        access_key: "9b4e89c29304c1285480d0f4f632fdd1",
-        access_secret: "1C8eUNLe1UNr95hkuMgUU0jwy9avHfGkTGoivap9",
+        access_key: process.env.ACRCLOUD_ACCESS_KEY_1,
+        access_secret: process.env.ACRCLOUD_ACCESS_SECRET_1,
       }),
       q = m.quoted ? m.quoted : m,
       mime = (q.msg || q).mimetype || q.mediaType || "";
@@ -40,8 +40,8 @@ const handler = async (m, { conn, usedPrefix, command }) => {
   } catch (e) {
     let acr = new acrcloud({
         host: "identify-eu-west-1.acrcloud.com",
-        access_key: "1561a11eab4ab229f323cac3bab2909f",
-        access_secret: "4XYoTSkwC8OvSRXVCrjDZAqpqT1oLnvsoDpLodxg",
+        access_key: process.env.ACRCLOUD_ACCESS_KEY_2,
+        access_secret: process.env.ACRCLOUD_ACCESS_SECRET_2,
       }),
       q = m.quoted ? m.quoted : m,
       mime = (q.msg || q).mimetype || q.mediaType || "";
