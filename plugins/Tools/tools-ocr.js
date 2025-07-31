@@ -37,7 +37,7 @@ const detectInput = (input) =>
 const ocrSpace = async (input, options = {}) => {
   try {
     const {
-      apiKey = "helloworld",
+      apiKey = process.env.OCR_API_KEY,
       ocrUrl = "https://api.ocr.space/parse/image",
       language = "eng",
     } = options;

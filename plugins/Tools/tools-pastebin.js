@@ -20,7 +20,7 @@ const handler = async (m, { args, usedPrefix, command }) => {
 export default handler;
 async function createPaste(title = "", content) {
   const data = new URLSearchParams({
-    api_dev_key: "_L_ZkBp7K3aZMY7z4ombPIztLxITOOpD",
+    api_dev_key: process.env.PASTEBIN_API_KEY,
     api_paste_name: title,
     api_paste_code: content,
     api_paste_format: "text",

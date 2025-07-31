@@ -88,7 +88,7 @@ async function SaveFrom(url) {
 }
 
 function generateHash(url) {
-  return crypto.createHash("md5").update(url).digest("hex");
+  return crypto.createHash("sha256").update(url).digest("hex");
 }
 async function savefrom(url) {
   const form = {

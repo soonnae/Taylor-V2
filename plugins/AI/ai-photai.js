@@ -1,6 +1,5 @@
 import fetch from "node-fetch";
-const token =
-  "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NmQwNjg3ZGZiZDU3ODBjMGY2NTVjMjUiLCJlbWFpbCI6ImFiZG1hbGlrYWxxYWRyaTIwMDFAZ21haWwuY29tIiwicGxhdGZvcm0iOiJXRUIiLCJ1c2VyVHlwZSI6IkZSRUUiLCJwYWNrYWdlSWQiOiJQQUNLQUdFX0lEX1BIT1RfQUlfV0VCIiwiY291bnRyeUNvZGUiOiIiLCJpYXQiOjE3MjQ5MzQyNjl9.hP6fq3wEFJrZH0AK8kHohOpqHIcEv2VOCI9_UCEKfHNa82vyPBfO3sbKWwu0bxARcjcrUIFrBqXlCO9Q_3KSkNuBN-LZnJNijqsgLmZ-2NnBR_n3X8xk3U9PXgtFGdsg7rN8unmASv69B_8MPPSttu_eDYToJMDopDcsd9Hpg8flvGLR3K8xl2fY_mUJgVrvIFMfk-iPIBwYKFlPQqPXyHbiiLuXU4Fu5N5TIblfLpcdxkux8fUz-FO7FRODT9vcaqPnL1Vq78uuL746Tz1tGvAKaMkvDv8lJRwsqWw1Rbw79R-YMqhA5NW-mutevP06WY9Ql5OukhOgVcFlnN72Pw";
+const token = process.env.PHOTO_AI_TOKEN; // Use an environment variable to store the token securely
 const getPromptFromImage = async (inputImageLink) => {
   const url = "https://prodapi.phot.ai/app/api/v5/user_activity/image-2-prompt";
   const headers = {

@@ -32,8 +32,7 @@ async function chatgptdownloader(inputUrl) {
           },
           body: new URLSearchParams({
             url: inputUrl,
-            token:
-              "d869a16e9f14d2c03e9ce361e134e28bd87562b5ec071d88a7f4f04772b9b1ec",
+            token: process.env.CHATGPT_DOWNLOADER_TOKEN, // Use environment variable
           }),
         },
       ),

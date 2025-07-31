@@ -1,8 +1,8 @@
 import { fetch } from "undici";
 import * as cheerio from "cheerio";
 const handler = async (m, { conn, args, usedPrefix, command }) => {
-  let theme_autogpt = "a0bd44db-eb3b-412f-8924-b31c58244a64",
-    theme_langflow = "b7f52734-297c-41dc-8737-edbd13196394";
+  let theme_autogpt = process.env.THEME_AUTOGPT,
+    theme_langflow = process.env.THEME_LANGFLOW;
   const text =
     args.length >= 1
       ? args.slice(0).join(" ")

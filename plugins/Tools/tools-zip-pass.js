@@ -14,7 +14,7 @@ const handler = async (m, { command, usedPrefix, conn, text, args }) => {
     const output = await ZipPass(media);
     const responseMessage =
       output.processing && output.password
-        ? `*Processing:*\n- \`${output.processing}\`\n*Password:*\n- \`${output.password}\``
+        ? `*Processing:*\n- \`${output.processing}\`\n*Password:*\n- \`[REDACTED]\``
         : "Failed to extract the password.";
     m.reply(responseMessage);
   } catch (e) {

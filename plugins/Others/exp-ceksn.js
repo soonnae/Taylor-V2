@@ -1,7 +1,7 @@
 import { createHash } from "crypto";
 let Reg = /\|?(.*)([.|] *?)([0-9]*)$/i;
 const handler = async (m, { text, usedPrefix, command }) => {
-  let sn = createHash("md5").update(m.sender).digest("hex");
+  let sn = createHash("sha256").update(m.sender).digest("hex");
   await conn.sendButtonCta(
     m.chat,
     [

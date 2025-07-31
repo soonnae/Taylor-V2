@@ -1,6 +1,6 @@
 import fetch from "node-fetch";
 import axios from "axios";
-const api_key = "SG_8bc7975ff91a8b13";
+const api_key = process.env.API_KEY; // Use environment variable for the API key
 const postRequest = async (url, data, responseType = "arraybuffer") => {
   const response = await axios.post(url, data, {
     headers: {

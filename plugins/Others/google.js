@@ -49,7 +49,7 @@ const handler = async (m, { command, usedPrefix, conn, args }) => {
       );
     } catch (e) {
       try {
-        let API_KEY = "7d3eb92cb730ed676d5afbd6c902ac1f";
+        let API_KEY = process.env.SERPSTACK_API_KEY; // Modified to use an environment variable
         let response = await fetch(
           "http://api.serpstack.com/search?access_key=" +
             API_KEY +

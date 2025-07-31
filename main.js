@@ -1,5 +1,5 @@
 import os from "os";
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+// process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 import { loadConfig } from "./config.js";
 import Helper from "./lib/helper.js";
 import { createRequire } from "module";

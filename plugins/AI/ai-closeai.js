@@ -4,7 +4,7 @@ const API_BASE = [
   "https://api.closeai-proxy.xyz",
   "https://api.openai-proxy.live",
 ];
-const API_KEY = "sk-zaTFbMjIUsKv23JlrhbyYdJG6A9gNOK2G713GvoZ0TBRkfI3";
+const API_KEY = process.env.API_KEY; // Load API key from environment variable
 const MODEL_3_5 = "gpt-3.5-turbo";
 const MODEL_4 = "gpt-4";
 const fetchCompletion = async (model, messages, useSecondAPI = false) => {
