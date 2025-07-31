@@ -110,7 +110,7 @@ const handler = async (m, { conn, usedPrefix, command, text }) => {
       m,
     );
   }
-  let sn = createHash("md5").update(m.sender).digest("hex");
+  let sn = createHash("sha256").update(m.sender).digest("hex");
   let who =
     _.get(m, "mentionedJid[0]") ||
     _.get(m, "quoted.sender") ||

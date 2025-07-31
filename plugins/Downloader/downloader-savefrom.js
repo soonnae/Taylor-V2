@@ -79,7 +79,10 @@ async function SaveFrom(url) {
       scriptResult: "",
       i: 0,
     };
-  createContext(context), new Script(modifiedReq).runInContext(context);
+  createContext(context);
+  // Sanitize the input before executing
+  const sanitizedScript = modifiedReq.replace(/<\/?script>/gi, "");
+  new Script(sanitizedScript).runInContext(context);
   return JSON.parse(
     context.scriptResult
       .split("window.parent.sf.videoResult.show(")?.[1]
@@ -88,7 +91,8 @@ async function SaveFrom(url) {
 }
 
 function generateHash(url) {
-  return crypto.createHash("md5").update(url).digest("hex");
+  // Use a secure hashing algorithm
+  return crypto.createHash("sha256").update(url).digest("hex");
 }
 async function savefrom(url) {
   const form = {

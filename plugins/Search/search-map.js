@@ -6,8 +6,7 @@ const handler = async (m, { command, usedPrefix, conn, text, args }) => {
   m.react(wait);
   try {
     const param = {
-      api_key:
-        "f70cce2ec221209bcd45af4533adbbc51c51b682c29251b618061115c6e95d5c",
+      api_key: process.env.SERPAPI_KEY,
       engine: "google_maps",
       q: tema,
     };
@@ -38,8 +37,7 @@ const handler = async (m, { command, usedPrefix, conn, text, args }) => {
 📝 *Ulasan:* ${out.reviews || "Tidak ada"}
 📞 *Nomor Telepon:* ${out.phone || "Tidak ada"}`;
     const data2 = {
-      api_key:
-        "f70cce2ec221209bcd45af4533adbbc51c51b682c29251b618061115c6e95d5c",
+      api_key: process.env.SERPAPI_KEY,
       engine: "google_maps_photos",
       data_id: out.data_id,
     };

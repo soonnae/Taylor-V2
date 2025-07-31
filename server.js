@@ -1,10 +1,12 @@
 import express from "express";
-import { createServer } from "http";
+import { createServer } from "https"; // Changed from http to https
 import fetch from "node-fetch";
+import helmet from "helmet"; // Import helmet
 
 function connect(conn, PORT, opts) {
   const app = express(),
     server = createServer(app);
+  app.use(helmet()); // Use helmet to disable X-Powered-By
   let _qr = "invalid";
   conn.ev.on("connection.update", ({ qr }) => qr && (_qr = qr)),
     app.use(async (req, res) => {

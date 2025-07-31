@@ -11,8 +11,7 @@ const handler = async (m, { command, usedPrefix, conn, args }) => {
     m.react(wait);
     if (command === "yandex") {
       const param = {
-        api_key:
-          "d52da17da557f02e45234c11db22c4e9fe19c15d68a378e0a31f11d92b2cf562",
+        api_key: process.env.YANDEX_API_KEY,
         engine: "yandex",
         text: text,
       };
@@ -27,8 +26,7 @@ const handler = async (m, { command, usedPrefix, conn, args }) => {
     }
     if (command === "yandeximg") {
       const param = {
-        api_key:
-          "d52da17da557f02e45234c11db22c4e9fe19c15d68a378e0a31f11d92b2cf562",
+        api_key: process.env.YANDEX_API_KEY,
         engine: "yandex_images",
         text: text,
       };
@@ -50,8 +48,7 @@ const handler = async (m, { command, usedPrefix, conn, args }) => {
     }
     if (command === "yandexvid") {
       const param = {
-        api_key:
-          "d52da17da557f02e45234c11db22c4e9fe19c15d68a378e0a31f11d92b2cf562",
+        api_key: process.env.YANDEX_API_KEY,
         engine: "yandex_videos",
         text: text,
       };

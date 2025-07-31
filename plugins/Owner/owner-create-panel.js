@@ -7,8 +7,8 @@ const format = sizeFormatter(),
     { conn, args, text, usedPrefix: _p, command, isROwner },
   ) => {
     const domain = "http://43.133.156.76",
-      apikey = "ptla_gyH0Dtbew65OealnuYGURRs77z0Y5Yz5I4WYxISMO1a",
-      c_apikey = "ptlc_pDEHGmUXUHxY1FKoh5pVd62a9nAK3VTcZk9fBCopD3y";
+      apikey = process.env.API_KEY, // Use environment variable for API key
+      c_apikey = process.env.C_API_KEY; // Use environment variable for client API key
     switch (command) {
       case "addusr":
         {

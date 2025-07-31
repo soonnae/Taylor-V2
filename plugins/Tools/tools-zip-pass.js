@@ -64,9 +64,11 @@ async function ZipPass(content) {
         processing: "Not found",
         password: "Not found",
       };
-    const [, processing = "Not found", password = "Not found"] =
-      (await postResponse.text()).match(/Processing: (.+)<br>Result: (.+)/) ||
-      [];
+    const responseText = await postResponse.text();
+    const processingMatch = responseText.match(/Processing: (.+)<br>/);
+    const passwordMatch = responseText.match(/Result: (.+)/);
+    const processing = processingMatch ? processingMatch[1] : "Not found";
+    const password = passwordMatch ? passwordMatch[1] : "Not found";
     return {
       processing: processing,
       password: password,
