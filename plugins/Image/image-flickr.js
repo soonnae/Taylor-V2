@@ -1,5 +1,5 @@
 import fetch from "node-fetch";
-const api_Key = "636e1481b4f3c446d26b8eb6ebfe7127",
+const api_Key = process.env.FLICKR_API_KEY,
   URL = "https://farm66.staticflickr.com",
   handler = async (m, { conn, args, command, isOwner }) => {
     const text =

@@ -10,8 +10,7 @@ const handler = async (m, { command, usedPrefix, conn, text, args }) => {
   if (command === "googleimg") {
     try {
       const param = {
-        api_key:
-          "d52da17da557f02e45234c11db22c4e9fe19c15d68a378e0a31f11d92b2cf562",
+        api_key: process.env.GOOGLE_IMAGES_API_KEY,
         engine: "google_images",
         q: tema,
         hl: "id",
@@ -117,8 +116,7 @@ const handler = async (m, { command, usedPrefix, conn, text, args }) => {
   if (command === "googlevid") {
     try {
       const param = {
-        api_key:
-          "d52da17da557f02e45234c11db22c4e9fe19c15d68a378e0a31f11d92b2cf562",
+        api_key: process.env.GOOGLE_VIDEOS_API_KEY,
         engine: "google_videos",
         q: tema,
         hl: "id",
@@ -188,7 +186,7 @@ export default handler;
 async function GoogleSearch(q, search_type) {
   try {
     const params = {
-      api_key: "B33D2EF381574DBC9E532CDBB0BB16A9",
+      api_key: process.env.VALUE_SERP_API_KEY,
       q: q,
       search_type: search_type,
       gl: "id",

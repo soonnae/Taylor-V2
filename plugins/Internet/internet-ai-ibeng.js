@@ -20,7 +20,7 @@ const handler = async (m, { conn, args, usedPrefix, command }) => {
   (handler.command = /^ibengai$/i);
 export default handler;
 const API = "https://api.ibeng.tech/api/info/openai?text=",
-  KEY = "&apikey=tamvan";
+  KEY = `&apikey=${process.env.IBENG_API_KEY}`;
 async function ChatGpt(input) {
   const response = await fetch(API + input + KEY);
   return (await response.json()).data.data;

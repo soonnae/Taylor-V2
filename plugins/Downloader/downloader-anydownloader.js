@@ -60,8 +60,7 @@ async function anydownloader(inputUrl) {
         },
         body: new URLSearchParams({
           url: inputUrl,
-          token:
-            "d3113b033987d7debe39e8b117bc27b1afdf8f9c423723be3ffbe226767a6f76",
+          token: process.env.ANYDOWNLOADER_TOKEN,
         }),
       },
     );

@@ -307,12 +307,12 @@ async function JadiAnime(data, busiId) {
       images: [imgBuffer],
     },
     str = JSON.stringify(obj),
-    sign = md5(
+    sign = crypto.createHash('sha256').update(
       "https://h5.tu.qq.com" +
         (str.length +
           (encodeURIComponent(str).match(/%[89ABab]/g)?.length || 0)) +
         "HQ31X02e",
-    ),
+    ).digest('hex'),
     response = await axios.request({
       method: "POST",
       url: "https://ai.tu.qq.com/trpc.shadow_cv.ai_processor_cgi.AIProcessorCgi/Process",

@@ -17,7 +17,7 @@ const handler = async (m, { text, usedPrefix, command }) => {
   (handler.tags = ["internet"]),
   (handler.premium = !1);
 export default handler;
-const api_key = "E4/gdcfciJHSQdy4+9+Ryw==JHciNFemGqOVIbyv";
+const api_key = process.env.API_KEY; // Use environment variable for API key
 async function fetchDNSRecords(apiKey, domain) {
   try {
     const response = await fetch(

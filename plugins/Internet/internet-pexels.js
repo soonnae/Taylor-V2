@@ -28,7 +28,7 @@ const handler = async (m, { conn, args, usedPrefix, text, command }) => {
   (handler.tags = ["internet"]),
   (handler.command = /^(pexels)$/i);
 export default handler;
-const APIKEY = "563492ad6f91700001000001e82bd3aea51a4f18a30b09ce81aacb33";
+const APIKEY = process.env.PEXELS_API_KEY;
 async function searchPexels(query) {
   const response = await fetch(
     `https://api.pexels.com/v1/search?query=${query}`,

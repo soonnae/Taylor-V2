@@ -1,5 +1,5 @@
 import fetch from "node-fetch";
-const OPENWEATHERMAP_API_KEY = "060a6bcfa19809c2cd4d97a212b19273";
+const OPENWEATHERMAP_API_KEY = process.env.OPENWEATHERMAP_API_KEY;
 const GEOCODING_URL = "http://api.openweathermap.org/geo/1.0/direct";
 const CURRENT_WEATHER_URL = "https://api.openweathermap.org/data/2.5/weather";
 const FORECAST_URL = "https://api.openweathermap.org/data/2.5/forecast";

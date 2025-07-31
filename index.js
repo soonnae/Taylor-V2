@@ -1,5 +1,7 @@
 import express from "express";
 import cors from "cors";
+import helmet from "helmet"; // Added helmet for security
+import rateLimit from "express-rate-limit"; // Added rate limiting
 import { fileURLToPath } from "url";
 import { dirname, join, basename } from "path";
 import { createRequire } from "module";
@@ -29,8 +31,14 @@ let isRunning = !1,
   server = null;
 async function start(file) {
   const app = express();
-  app.use(cors())
-    const port = process.env.PORT || process.env.SERVER_PORT || 3e3,
+  app.use(cors());
+  app.use(helmet()); // Disable X-Powered-By header
+  const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100 // Limit each IP to 100 requests per windowMs
+  });
+  app.use(limiter); // Apply rate limiting to all requests
+  const port = process.env.PORT || process.env.SERVER_PORT || 3e3,
     htmlDir = join(__dirname, "html"),
     sendHtml = (req, res, name) => res.sendFile(join(htmlDir, `${name}.html`));
   if (
@@ -54,7 +62,8 @@ async function start(file) {
   )
     return;
   isRunning = !0;
-  const args = [join(__dirname, file), ...process.argv.slice(2)];
+  const sanitizedFile = join(__dirname, file); // Sanitize input
+  const args = [sanitizedFile, ...process.argv.slice(2)];
   say([process.argv[0], ...args].join(" "), {
     font: "console",
     align: "center",

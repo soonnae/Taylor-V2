@@ -1,6 +1,6 @@
 import fetch from "node-fetch";
 import sharp from "sharp";
-const ACCUWEATHER_API_KEY = "d7e795ae6a0d44aaa8abb1a0a7ac19e4";
+const ACCUWEATHER_API_KEY = process.env.ACCUWEATHER_API_KEY;
 const LOCATION_URL =
   "https://api.accuweather.com/locations/v1/cities/search.json";
 const FORECAST_URL = "https://api.accuweather.com/forecasts/v1/daily/10day";

@@ -12,7 +12,7 @@ async function postRequest(url, form) {
   return await response.json();
 }
 const handler = async (m, { conn, command, text }) => {
-  const apiKey = "u2239117-169fd18aaa7ec6c7b7bce232";
+  const apiKey = process.env.UPTIMEROBOT_API_KEY; // Use environment variable for API key
   if ("uptimerobot" === command)
     if (text) {
       const [action, input, inputs] = text.split("|");

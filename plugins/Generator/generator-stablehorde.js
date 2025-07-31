@@ -1,5 +1,5 @@
 import { StableHorde, AiHorde } from "../../lib/maker/stablehorde.js";
-const apiKey = "0000000000",
+const apiKey = process.env.API_KEY || "default_api_key",
   stableHorde = new StableHorde({
     apiKey: apiKey,
   }),
